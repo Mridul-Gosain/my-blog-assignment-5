@@ -40,7 +40,7 @@ const hbs = create({
     }
   },
 });
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000; // port
 const flash = require("connect-flash");
 const bodyParser = require("body-parser");
 const session = require("express-session");
