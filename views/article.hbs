@@ -9,7 +9,7 @@
     <meta name="author" content="" />
     <title>{{post.title}}</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/blog.png" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/assets/css/styles.css" rel="stylesheet" />
   </head>
@@ -97,14 +97,14 @@
               <!-- Post categories-->
               <a
                 class="badge bg-secondary text-decoration-none link-light"
-                href="/category/{{ post.category }}"
+                href="/category/{{post.category}}"
               >{{post.category}}</a>
             </header>
             <!-- Preview image figure-->
             <figure class=""><img
                 width="700px"
                 class="img"
-                src="{{ post.image }}"
+                src="{{post.image}}"
                 alt="..."
               /></figure>
             <!-- Post content-->
