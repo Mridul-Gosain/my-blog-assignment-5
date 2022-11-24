@@ -1,0 +1,67 @@
+{{> adminHeader}}
+
+      <!-- Sidebar -->
+      {{> adminSidebar}}
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+          <!-- Topbar -->
+          {{> adminNavigation}}
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+
+            <!-- Content Row -->
+            <div class="row">
+
+              <div class="col-md-12">
+
+                <h1>All posts</h1>
+                <h5><a href="/admin/posts/new">New post</a></h5>
+
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Category</th>
+                      <th>Image</th>
+                      <td>Date</td>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each posts}}
+                    <tr>
+                      <td>{{ this.title }}</td>
+                      <td>{{ this.category }}</td>
+                      <td><img width="100" src="{{ this.image }}" alt="{{ this.image }}"></td>
+                      <td>{{ formatDate this.date }}</td>
+                      <td>
+                        <a href="/admin/posts/edit/{{this._id}}">Edit</a>&nbsp;&nbsp;&nbsp;
+                        <a onclick="return confirm('Are you sure?');" href="/admin/posts/delete/{{this._id}}">Delete</a>
+                      </td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+          <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+{{> adminFooter}}
